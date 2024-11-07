@@ -6,15 +6,13 @@ on:
 
 jobs: 
     first_job: 
-        name: Jomacs-K8S
         runs-on: ubuntu-latest
         steps:
-            - name: First Message
-              run: echo "Welcome to the world of CI/CD through github actions"
+            - name: Checkout Code
+              uses: actions/checkout@v4
 
-            - name: List All Files including Hidden 
-              run: ls -1a 
-
-            - name: Show Present working Directory  
-              run: pwd 
-              
+            - name: List and Read files
+              run: |
+                echo "My first GitHub Actions Job"
+                ls -1
+                cat dockerfile
